@@ -33,8 +33,9 @@ export const Columns: React.FC<ColumnsType> = ({
       breakpoint={breakpoint}
       {...rest}
     >
-      {React.Children.map(children, child =>
-        React.cloneElement(child as React.ReactElement, {breakpoint}),
+      {React.Children.map(
+        React.Children.toArray(children).filter(Boolean),
+        child => React.cloneElement(child as React.ReactElement, {breakpoint}),
       )}
     </WrapColumns>
   );
