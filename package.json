@@ -1,0 +1,42 @@
+{
+  "name": "columns3000",
+  "homepage": "https://github.com/ezekielaquino/Columns3000",
+  "author": "Ezekiel Aquino (https://ezekielaquino.com)",
+  "license": "MIT",
+  "version": "0.0.1",
+  "main": "./lib/cjs/index.js",
+  "module": "./lib/esm/index.js",
+  "types": "./lib/esm/index.d.ts",
+  "files": [
+    "/lib"
+  ],
+  "devDependencies": {
+    "@babel/core": "^7.15.0",
+    "@emotion/react": "^11.4.1",
+    "@emotion/styled": "^11.3.0",
+    "@storybook/addon-actions": "^6.3.7",
+    "@storybook/addon-essentials": "^6.3.7",
+    "@storybook/addon-links": "^6.3.7",
+    "@storybook/react": "^6.3.7",
+    "@types/react": "^17.0.19",
+    "@types/react-dom": "^17.0.9",
+    "babel-loader": "^8.2.2",
+    "prettier": "^2.3.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "typescript": "^4.3.5"
+  },
+  "scripts": {
+    "build": "yarn build:esm && yarn build:cjs",
+    "build:esm": "tsc",
+    "build:cjs": "tsc --module commonjs --outDir lib/cjs",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
+  },
+  "peerDependencies": {
+    "@emotion/react": "^11.4.1",
+    "@emotion/styled": "^11.3.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  }
+}
