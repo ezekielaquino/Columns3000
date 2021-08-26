@@ -15,7 +15,8 @@ import {Columns, Column} from 'columns3000';
 <Columns
   columns={12}
   justify="flex-start"
-  gutter="16px" // With units! use px, rem, vw, whatever flavor you need!
+  // Gutter With units! use px, rem, vw, etc, even css variables or calc()!
+  gutter="16px"
   breakpoint="720px"
 >
   <Column span={6}>This is column spans 6!</Column>
