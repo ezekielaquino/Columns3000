@@ -68,6 +68,12 @@ const WrapColumns = styled.div<ColumnsBase>`
     box-sizing: border-box;
     justify-content: ${props => props.justify};
   }
+
+  @media (max-width: ${props => props.breakpoint}) {
+    > div + div {
+      margin-top: var(--gutter);
+    }
+  }
 `;
 
 const WrapColumn = styled.div<ColumnType>`
