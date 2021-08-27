@@ -6,6 +6,7 @@ type ColumnsBase = {
   justify: React.CSSProperties['justifyContent'];
   gutter: string;
   breakpoint: string;
+  className?: string;
 };
 
 export type ColumnsType = Partial<ColumnsBase>;
@@ -13,6 +14,7 @@ export type ColumnType = {
   span: number;
   grow?: boolean;
   breakpoint?: string;
+  className?: string;
 };
 
 const BREAKPOINT = '720px';
@@ -22,11 +24,13 @@ export const Columns: React.FC<ColumnsType> = ({
   justify = 'flex-start',
   gutter = '16px',
   breakpoint = BREAKPOINT,
+  className,
   children,
   ...rest
 }) => {
   return (
     <WrapColumns
+      className={className}
       columns={columns}
       justify={justify}
       gutter={gutter}
@@ -46,10 +50,17 @@ export const Column: React.FC<ColumnType> = ({
   grow,
   breakpoint = BREAKPOINT,
   children,
+  className,
   ...rest
 }) => {
   return (
-    <WrapColumn span={span} grow={grow} breakpoint={breakpoint} {...rest}>
+    <WrapColumn
+      className={className}
+      span={span}
+      grow={grow}
+      breakpoint={breakpoint}
+      {...rest}
+    >
       {children}
     </WrapColumn>
   );
