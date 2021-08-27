@@ -3,7 +3,7 @@
   "homepage": "https://github.com/ezekielaquino/Columns3000",
   "author": "Ezekiel Aquino (https://ezekielaquino.com)",
   "license": "MIT",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "main": "./lib/cjs/index.js",
   "module": "./lib/esm/index.js",
   "types": "./lib/esm/index.d.ts",
