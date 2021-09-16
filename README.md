@@ -24,6 +24,33 @@ import {Columns, Column} from 'columns3000';
 </Columns>;
 ```
 
+**Responsive gutters, span or columns?**
+
+I suggest using `useMedia` from `react-use` like below:
+
+```tsx
+import {Columns, Column} from 'columns3000';
+import {useMedia} from 'react-use';
+
+const isNarrow = useMedia('(max-width: 1024px)');
+const span = isNarrow ? 2 : 4;
+const gutter = isNarrow ? '16px' : 'var(--gutterLarge)';
+
+// in render
+<Columns
+  columns={12}
+  justify="flex-start"
+  // Gutter With units! use px, rem, vw, etc, even css variables or calc()!
+  gutter={gutter}
+  breakpoint="720px"
+>
+  <Column span={span}>Spans 4 on width > 1024 and 2 below!</Column>
+  <Column span={span}>Same!</Column>
+  <Column span={span}>Same!</Column>
+  <Column span={span}>Same!</Column>
+</Columns>;
+```
+
 ### `Columns` props
 
 | Property   | Type   | Description                                                    | Default value |
